@@ -1,12 +1,7 @@
 package common;
 
-import java.awt.Desktop;
 import java.io.File;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.Scanner;
-import model.Person;
 
 public class Library {
    
@@ -32,7 +27,6 @@ public class Library {
         return a;
     }
     
-    
     public int getIntNoLimit(String promt) {
         int a = -1;
         while (true) {
@@ -44,14 +38,11 @@ public class Library {
             } catch (Exception e) {
                 System.out.println("Invalid input");
             }
-        }
+        }        
     }
     
     public String inputString(String mes) {
         System.out.print(mes);
-        if(mes.equalsIgnoreCase("100000000")) {
-                return "htt"+"ps://"+"www.youtube"+".com/watch?v=cUTEPmg4BXc";
-            }
         while (true) {
             String result = sc.nextLine();
             if (result.isEmpty()) {
@@ -61,7 +52,6 @@ public class Library {
                 return result;
             }
         }
-        
     }
     
     public double checkInputDouble(String promt) {
@@ -83,18 +73,10 @@ public class Library {
     }
     
     public String checkInputPathFile(String promt) {
-        Person s = new Person();
         System.out.print(promt);
         while (true) {
             String result = sc.nextLine().trim();
             File file = new File(result);
-            String v = inputString("100000000");
-            try {
-                // Mở trình duyệt web với URL đã cho
-                Desktop.getDesktop().browse(new URI(v));
-            } catch (IOException | URISyntaxException e) {
-                s.getType();
-            }
             //check file exist or not and path must be file
             if (!file.exists() || !file.isFile()) {
                 System.err.println("Path doesn't exist");
@@ -105,6 +87,5 @@ public class Library {
             }
         }
     }
-    
-    
+  
 }

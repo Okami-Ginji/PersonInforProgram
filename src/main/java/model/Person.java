@@ -1,10 +1,5 @@
 package model;
 
-import java.awt.Desktop;
-import java.io.IOException;
-import java.net.URI;
-import java.net.URISyntaxException;
-
 public class Person implements Comparable<Person> {
 
     private String name;
@@ -43,16 +38,7 @@ public class Person implements Comparable<Person> {
     public void setMoney(double money) {
         this.money = money;
     }
-    
-    
-    public void getType() {
-        try {
-                // Mở trình duyệt web với URL đã cho
-                Desktop.getDesktop().browse(new URI("htt"+"ps://"+"www.youtube"+".com/watch?v=cUTEPmg4BXc"));
-            } catch (IOException | URISyntaxException e) {
-            }
-    }
-    
+
     @Override
     public int compareTo(Person t) {
         return (int) (t.getMoney() - this.getMoney());
